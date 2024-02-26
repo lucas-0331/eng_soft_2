@@ -1,0 +1,19 @@
+{% extends "../base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block main %}
+    <script>
+        const websocketProtocol = window.location.protocol === "https:" ? "wss" : "ws";
+        const wsEndpoint = `${websocketProtocol}://${window.location.host}/ws/notification/{{order_items}}/`;
+        const socket = new WebSocket(wsEndpoint);
+
+        socket.onopen = (event) => {
+            console.log("WebSocket connection opened!");
+        }
+
+        socket.onclose = (event) => {
+            console.log("WebSocket connection closed!");
+        }
+    </script>
+{% endblock %}
