@@ -79,6 +79,7 @@ class ProductAdmin(admin.ModelAdmin):
         "product_code",
         "product_available_pk",
         "product_category_pk",
+        "product_unitMeasurement",
     ]
     search_fields = [
         "product_name",

@@ -35,7 +35,7 @@ class Category(models.Model):
 
 
 class UnitMeasurement(models.Model):
-    UnitMeasurement_type = models.CharField(
+    unitMeasurement_type = models.CharField(
         max_length=8,
         verbose_name="Tipo de Unidade de Medida",
     )
@@ -45,7 +45,7 @@ class UnitMeasurement(models.Model):
         verbose_name_plural = "Unidade de Medida"
 
     def __str__(self):
-        return f"{self.UnitMeasurement_type}"
+        return f"{self.unitMeasurement_type}"
 
 
 class Available(models.Model):
@@ -87,7 +87,7 @@ class Product(models.Model):
         on_delete=models.CASCADE,
         verbose_name="Categoria",
     )
-    product_UnitMeasurement = models.ForeignKey(
+    product_unitMeasurement = models.ForeignKey(
         UnitMeasurement,
         on_delete=models.CASCADE,
         verbose_name="Unidade de Medida",
